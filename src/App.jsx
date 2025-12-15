@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import Login from "./pages/Login";
 
 function App(){
   const [count,setCount]= useState(2)
@@ -7,8 +7,8 @@ function App(){
   return(
     <>
     <div> 
-    
-    <button onClick={()=>setCount(count+2)} className="bg-green-600 "> Count: {count}</button>  
+
+    <Login/>    
     </div>
     </>
   )
