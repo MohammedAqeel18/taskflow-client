@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Input from "../components/ui/Input";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -34,12 +35,21 @@ const Login = () => {
           placeholder="••••••••"
         />
 
+
         <button
           type="submit"
           className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
         >
           Login
         </button>
+
+        <p className="text-sm text-center"> 
+        Dont have an account?{" "}
+    <Link to="/register" className="text-blue-600 hover:underline"> 
+    Register
+    </Link>
+    </p>
+
       </form>
     </div>
   );
