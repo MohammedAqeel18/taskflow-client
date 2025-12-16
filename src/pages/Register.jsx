@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useCallback } from "react";
 import Input from "../components/ui/input";
 import { Link } from "react-router-dom";
 
@@ -11,21 +11,22 @@ const Register = () => {
         password:""
     });
 
-    const handelChange = (e) =>{
+    const handelChange = useCallback((e) =>{
 
 setFormData((prev)=> ({
     ...prev,
     [e.target.name]:e.target.value,
 }))
-}
+},[]);
 
-const handleSubmit = (e) => {
+const handleSubmit = useCallback((e) => {
 
     e.preventDefault();
     console.log(formData)
-}
+},[formData]);
 
 return(
+    <> 
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
 <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm space-y-4">
 
@@ -67,7 +68,9 @@ name="password"
      <Link to="/login" className="text-blue-600 hover:underline"> Login</Link> 
      </p>
 </form>
+
     </div>
+    </>
 )
 
 }

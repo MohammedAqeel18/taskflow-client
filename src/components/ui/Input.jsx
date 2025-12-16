@@ -1,5 +1,10 @@
-const Input = ({ label, type = "text", value, onChange, placeholder,name }) => {
-  return (
+import React from "react";
+
+
+const Input = React.memo(({ label, type = "text", value, onChange, placeholder,name }) => {
+
+console.log(`Rendering input:${name}`)
+  return( 
     <div className="flex flex-col gap-1">
       <label className="text-sm font-medium text-gray-700">
         {label}
@@ -14,6 +19,6 @@ const Input = ({ label, type = "text", value, onChange, placeholder,name }) => {
       />
     </div>
   );
-};
+});
 
 export default Input;
